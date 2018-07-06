@@ -1,3 +1,7 @@
+.transition-all {
+  transition: all 200ms ease-out;
+}
+
 .fade-enter {
   transform: translateX(-100px);
   opacity: 0;

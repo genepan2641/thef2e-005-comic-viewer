@@ -4,10 +4,25 @@
 @import '_transition';
 body {
   font-family: 'Roboto', sans-serif;
+  background-color: $light-gray;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 a {
   text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
 }
 
 .text-center {
@@ -15,7 +30,7 @@ a {
 }
 
 .container {
-  max-width: 960px;
+  max-width: 620px;
   margin: 0 auto;
 }
 
@@ -48,9 +63,44 @@ a {
 .paragraph {
   font-weight: 400;
   font-size: 16px;
+  line-height: 24px;
 }
 
 .label {
   font-weight: 700;
   font-size: 16px;
+  line-height: 24px;
+}
+
+.w100 {
+  max-width: 100%;
+  height: auto;
+}
+
+.badge {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 14px;
+}
+
+.bg-main {
+  background-color: $primary-color;
+}
+
+.color-white {
+  color: white;
+}
+
+.color-main {
+  color: $primary-color;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.inline-flex {
+  display: inline-flex !important;
 }
