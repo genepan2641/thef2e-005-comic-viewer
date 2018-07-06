@@ -1,0 +1,56 @@
+@import '_normalize';
+@import '_colors';
+@import '_spacing';
+@import '_transition';
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-weight: 700;
+  font-style: italic;
+  font-size: 36px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 36px;
+}
+
+.title2 {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.title3 {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.subtitle {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.paragraph {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.label {
+  font-weight: 700;
+  font-size: 16px;
+}
