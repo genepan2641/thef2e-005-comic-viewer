@@ -43,8 +43,14 @@
                     <div class="comicChapterSelector__title"><p class="title2">All Chapters</p></div>
                 </div>
                 <div class="comicChapterSelector__body">
-                    <router-link tag="div" class="comicChapterSelector__item transition-all" to="/comics/a/chapter/1"><span class="label">Chapter 1: The F2E Challenge Start!</span></router-link>
-                    <router-link tag="div" class="comicChapterSelector__item transition-all" to="/comics/a/chapter/1"><span class="label">Chapter 2: The F2E Challenge Start!</span><span class="badge mL10 bg-main">NEW</span></router-link>
+                    <router-link v-for="link in totalChapters" 
+                        :key="link.id"
+                        tag="div" 
+                        class="comicChapterSelector__item transition-all" 
+                        :to="`/comics/a/chapter/${link.id}`">
+                        <span class="label">{{ link.title }}</span>
+                    </router-link>
+                    <!-- <router-link tag="div" class="comicChapterSelector__item transition-all" to="/comics/a/chapter/2"><span class="label">Chapter 2: The F2E Challenge Start!</span><span class="badge mL10 bg-main">NEW</span></router-link> -->
                 </div>
             </div>
         </div>
@@ -54,6 +60,14 @@
 <script>
 import StarRating from 'vue-star-rating';
 export default {
+    data() {
+        return {
+            totalChapters: [
+                {id: 1, title: 'Chapter 1: The F2E Challenge Start!'},
+                {id: 2, title: 'Chapter 2: Todo List is Going Crazy!'}
+            ]
+        }
+    },
     components: {
         StarRating
     }

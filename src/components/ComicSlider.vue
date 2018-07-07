@@ -2,6 +2,7 @@
     <div class="comicSlider">
         <div class="comicSlider__picContainer">
             <arrow-button 
+                :disabled="currentChapter == 1"
                 @click.native="clickPrevChapterBtn" 
                 icon-name="angle-double"
                 direction="left">
@@ -16,11 +17,14 @@
                     :class="{'comicSlider__picItem-selected': i == currentPageIndex}"
                     alt="">
             </div>
-            <arrow-button 
-                @click.native="clickNextChapterBtn" 
-                icon-name="angle-double"
-                direction="right">
-            </arrow-button>
+            <el-tooltip content="next chapter">
+                <arrow-button 
+                    :disabled="currentChapter == totalChapters.length"
+                    @click.native="clickNextChapterBtn" 
+                    icon-name="angle-double"
+                    direction="right">
+                </arrow-button>
+            </el-tooltip>
         </div>
     </div>
 </template>
@@ -34,6 +38,12 @@ export default {
         },
         currentPageIndex: {
             type: Number
+        },
+        currentChapter: {
+            type: Number
+        },
+        totalChapters: {
+            type: Array
         }
     },
     components: {
@@ -61,10 +71,14 @@ export default {
             this.$emit('click-slider-item', index);
         },
         clickPrevChapterBtn() {
-
+            if(this.currentChapter > 1) {
+                this.$emit('update:currentChapter', this.currentChapter - 1);
+            }
         },
         clickNextChapterBtn() {
-
+            if(this.currentChapter < this.totalChapters.length) {
+                this.$emit('update:currentChapter', this.currentChapter + 1);
+            }
         }
     }
 }
