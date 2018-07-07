@@ -1,11 +1,11 @@
 <template>
     <div class="comicsPage">
       <div class="container">
-        <p class="text-center title2">choose comic!</p>
+        <p class="text-center title2 mT30">choose comic</p>
         <div class="comicsSelect">
-          <div v-for="n in 4" class="comicsItem" :key="n">
+          <div class="comicsItem">
             <router-link to="/comics/a">
-              <img src="../../static/images/comic_cover.png" alt="">
+              <img class="transition-all" src="../../static/images/comic_cover.png" alt="">
             </router-link>
             <p class="title3">My HexSchool</p>
           </div>
@@ -36,12 +36,11 @@ export default {
   margin: 10px;
   img {
     max-width: 100%;
-    transition: all 250ms;
   }
 
   &:hover {
     p {
-      color: $primary-color;
+      color: darken($primary-color, 30%);
     }
     img {
       -webkit-filter: saturate(0);

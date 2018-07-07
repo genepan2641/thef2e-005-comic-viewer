@@ -1,7 +1,7 @@
 <template>
     <div class="comicDetailPage">
         <div class="container">
-            <div class="comicDetail">
+            <div class="comicDetail mT30">
                 <div class="comicDetail__pic">
                     <img src="../../static/images/comic_cover.png" alt="" class="w100">
                 </div>
@@ -38,13 +38,13 @@
                 </div>
             </div>
 
-            <div class="comicChapter">
-                <div class="comicChapter__header">
-                    <div class="comicChapter__title"><p class="title2">All Chapters</p></div>
+            <div class="comicChapterSelector">
+                <div class="comicChapterSelector__header">
+                    <div class="comicChapterSelector__title"><p class="title2">All Chapters</p></div>
                 </div>
-                <div class="comicChapter__body">
-                    <router-link tag="div" class="comicChapter__item transition-all" to="/comics/a/chapter/1"><span class="label">Chapter 1: The F2E Challenge Start!</span></router-link>
-                    <router-link tag="div" class="comicChapter__item transition-all" to="/comics/a/chapter/1"><span class="label">Chapter 2: The F2E Challenge Start!</span><span class="badge mL10 bg-main">NEW</span></router-link>
+                <div class="comicChapterSelector__body">
+                    <router-link tag="div" class="comicChapterSelector__item transition-all" to="/comics/a/chapter/1"><span class="label">Chapter 1: The F2E Challenge Start!</span></router-link>
+                    <router-link tag="div" class="comicChapterSelector__item transition-all" to="/comics/a/chapter/1"><span class="label">Chapter 2: The F2E Challenge Start!</span><span class="badge mL10 bg-main">NEW</span></router-link>
                 </div>
             </div>
         </div>
@@ -84,17 +84,18 @@ export default {
   width: 60px;
 }
 
-.comicChapter__title {
+.comicChapterSelector__title {
   background-color: black;
   color: white;
   display: inline-block;
   padding: 15px;
 }
-.comicChapter__body {
+.comicChapterSelector__body {
   border: 4px solid black;
   background-color: white;
+  padding: 4px 0;
 }
-.comicChapter__item {
+.comicChapterSelector__item {
   width: 100%;
   padding: 15px 25px;
   cursor: pointer;

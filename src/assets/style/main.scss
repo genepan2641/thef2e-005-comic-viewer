@@ -2,9 +2,14 @@
 @import '_colors';
 @import '_spacing';
 @import '_transition';
+@import '_select';
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: $light-gray;
+  background-color: $white-gray;
+  transition: all 200ms ease-out;
+  &.darkMode {
+    background-color: black;
+  }
 }
 
 * {
@@ -13,6 +18,10 @@ body {
 
 a {
   text-decoration: none;
+  color: black;
+  &:active {
+    color: $primary-color;
+  }
 }
 
 h1,
@@ -23,6 +32,15 @@ h5,
 h6,
 p {
   margin: 0;
+}
+
+.clear {
+  clear: both;
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
 }
 
 .text-center {
@@ -70,6 +88,22 @@ p {
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
+}
+
+.darkMode {
+  .fas {
+    color: white;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a {
+    color: white;
+  }
 }
 
 .w100 {

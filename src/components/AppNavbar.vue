@@ -25,4 +25,14 @@ export default {
 .navbar__logolink {
   color: $primary-color;
 }
+
+.darkMode {
+  .navbar {
+    background: $primary-color;
+  }
+
+  .navbar__logolink {
+    color: black;
+  }
+}
 </style>
