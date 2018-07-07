@@ -13,7 +13,7 @@
                 @click="clickSliderItem(i)">
                 <div class="comicSlider__picNum text-center"><span class="label">{{ i+1 }}</span></div>
                 <img 
-                    :src="`../../static/images/${p}`" 
+                    :src="`static/images/${p}`" 
                     :class="{'comicSlider__picItem-selected': i == currentPageIndex}"
                     alt="">
             </div>

@@ -27,7 +27,7 @@
             <div class="comicView">
                 <arrow-button @click.native="prevPage" direction="left" :disabled="!allowPrev"></arrow-button>
                 <div class="comicPage__pic">
-                    <img class="w100" :src="`../../static/images/${pages[currentPageIndex]}`" alt="">
+                    <img class="w100" :src="`static/images/${pages[currentPageIndex]}`" alt="">
                 </div>
                 <arrow-button @click.native="nextPage" direction="right" :disabled="!allowNext"></arrow-button>
             </div>

@@ -5,9 +5,9 @@
         <div class="comicsSelect">
           <div class="comicsItem">
             <router-link to="/comics/a">
-              <img class="transition-all" src="../../static/images/comic_cover.png" alt="">
+              <img class="transition-all" src="static/images/comic_cover.png" alt="">
+              <p class="title3">My HexSchool</p>
             </router-link>
-            <p class="title3">My HexSchool</p>
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@
         <div class="container">
             <div class="comicDetail mT30">
                 <div class="comicDetail__pic">
-                    <img src="../../static/images/comic_cover.png" alt="" class="w100">
+                    <img src="static/images/comic_cover.png" alt="" class="w100">
                 </div>
                 <div class="comicDetail__wording">
                     <h3 class="w100 title text-center comicDetail__name">MY HEXSCHOOL</h3>
