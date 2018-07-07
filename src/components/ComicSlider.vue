@@ -96,9 +96,7 @@ export default {
   cursor: pointer;
   flex: 1 0 80px;
   white-space: nowrap;
-  &:not(:first-child) {
-    margin-left: 20px;
-  }
+  margin: 0 10px;
   > img {
     width: 100%;
   }

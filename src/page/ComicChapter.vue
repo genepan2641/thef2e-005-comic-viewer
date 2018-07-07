@@ -1,5 +1,13 @@
 <template>
     <div class="comicChapterPage mT30">
+        <comic-modal 
+            :show.sync="isFullScreen" 
+            :allow-prev="allowPrev"
+            :allow-next="allowNext"
+            :current-page-index.sync="currentPageIndex"
+            :page-src="`static/images/${pages[currentPageIndex]}`"
+            >
+        </comic-modal>
         <div class="container">
             <div class="mB30 clear">
                 <router-link class="title3" to="/comics/a">My Hexschool</router-link>
@@ -26,7 +34,7 @@
             </div>
             <div class="comicView">
                 <arrow-button @click.native="prevPage" direction="left" :disabled="!allowPrev"></arrow-button>
-                <div class="comicPage__pic">
+                <div @click="isFullScreen = !isFullScreen" class="comicPage__pic">
                     <img class="w100" :src="`static/images/${pages[currentPageIndex]}`" alt="">
                 </div>
                 <arrow-button @click.native="nextPage" direction="right" :disabled="!allowNext"></arrow-button>
@@ -47,6 +55,7 @@
 import ArrowButton from '../components/ArrowButton.vue';
 import ComicSlider from '../components/ComicSlider.vue';
 import ToggleViewMode from '../components/ToggleViewMode.vue';
+import ComicModal from '../components/ComicModal.vue';
 export default {
     data() {
         return {
@@ -56,7 +65,8 @@ export default {
             totalChapters: [
                 {id: 1, title: 'Chapter 1: The F2E Challenge Start!'},
                 {id: 2, title: 'Chapter 2: Todo List is Going Crazy!'}
-            ]
+            ],
+            isFullScreen: false
         }
     },
     computed: {
@@ -76,7 +86,8 @@ export default {
     components: {
         ArrowButton,
         ComicSlider,
-        ToggleViewMode
+        ToggleViewMode,
+        ComicModal
     },
     mounted() {
         for(let i = 1; i < 13; i++) {
@@ -108,6 +119,7 @@ export default {
     flex: 1 1 80px;
   }
   .comicPage__pic {
+    cursor: pointer;
     flex: 1 1 480px;
   }
 }

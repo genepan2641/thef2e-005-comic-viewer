@@ -7,21 +7,21 @@
 
 <script>
 export default {
-    props: {
-        direction: {
-            type: String,
-            default: 'right',
-            required: true
-        },
-        disabled: {
-            type: Boolean,
-            default: false
-        },
-        iconName: {
-            type: String,
-            default: 'angle'
-        }
+  props: {
+    direction: {
+      type: String,
+      default: 'right',
+      required: true
     },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    iconName: {
+      type: String,
+      default: 'angle'
+    }
+  },
 }
 </script>
 
@@ -71,12 +71,12 @@ export default {
   }
 }
 .darkMode .arrowButton-disabled {
-  background-color: $light-gray;
+  background-color: rgba($light-gray, 0.3);
   > .fas {
     color: $white-gray;
   }
   &:hover {
-    background-color: $light-gray;
+    background-color: rgba($light-gray, 0.3);
     > .fas {
       color: $light-gray;
     }
